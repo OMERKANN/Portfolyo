@@ -1,6 +1,8 @@
 const express = require('express'); 
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
+
+
 const app = express();
 const port = 4000;
 
@@ -19,8 +21,13 @@ app.get('/details.html', (req, res) => {
     res.sendFile(__dirname + '/details.html');
 });
 
-app.listen(port, () => {
+/* app.listen(port, () => {
   console.log(`Sunucu http://localhost:${port} adresinde çalışıyor`); // Sunucu başlatıldığında konsola bu mesajı yazdırıyoruz
+}); 
+
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Sunucu ${port} portunda çalışıyor`);
 });
 
 
